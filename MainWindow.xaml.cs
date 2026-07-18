@@ -249,7 +249,8 @@ namespace TaxiDriverTest
         {
             Question curQuestion = ExamQuestions[examQuestionNumber - 1].Question;
 
-            txtQuestionText.Text = examQuestionNumber.ToString() + ". " + curQuestion.Text;
+            txtExamNumber.Text = examQuestionNumber.ToString() + ".";
+            txtQuestionText.Text = curQuestion.Text;
             txtQuestionOption1.Text = curQuestion.Options[0];
             txtQuestionOption2.Text = curQuestion.Options[1];
             txtQuestionOption3.Text = curQuestion.Options[2];

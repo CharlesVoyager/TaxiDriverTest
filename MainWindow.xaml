@@ -35,7 +35,15 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="txtQuestionText" Grid.Row="0" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="28"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="txtExamNumber" Grid.Column="0" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
+                <TextBlock x:Name="txtQuestionText" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
+            </Grid>
+
             <TextBlock x:Name="txtQuestionOption1" Grid.Row="2" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
             <TextBlock x:Name="txtQuestionOption2" Grid.Row="3" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
             <TextBlock x:Name="txtQuestionOption3" Grid.Row="4" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
