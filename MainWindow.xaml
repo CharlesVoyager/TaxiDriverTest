@@ -1,0 +1,210 @@
+﻿<Window x:Class="TaxiDriverTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaxiDriverTest"
+        mc:Ignorable="d"
+        Title="執業登記證" Height="700" Width="1024" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="16"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Questions -->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="12"/>
+                <RowDefinition Height="42"/>
+                <RowDefinition Height="42"/>
+                <RowDefinition Height="42"/>
+                <RowDefinition Height="12"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="txtQuestionText" Grid.Row="0" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="txtQuestionOption1" Grid.Row="2" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="txtQuestionOption2" Grid.Row="3" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="txtQuestionOption3" Grid.Row="4" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="txtQuestionTextTail" Grid.Row="6" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+        </Grid>
+
+        <!-- Answers -->
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <RadioButton x:Name="rbAnswer1" Tag="1" Grid.Column="0" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="290" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Answer_Click" >
+                <RadioButton.Content>
+                    <TextBlock Text="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton x:Name="rbAnswer2" Tag="2" Grid.Column="1" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="290" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Answer_Click">
+                <RadioButton.Content>
+                    <TextBlock Text="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton x:Name="rbAnswer3" Tag="3" Grid.Column="2" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="290" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Answer_Click">
+                <RadioButton.Content>
+                    <TextBlock Text="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton x:Name="rbAnswerTrue" Tag="1" Grid.Column="0" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="290" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Answer_Click" Visibility="Collapsed">
+                <RadioButton.Content>
+                    <TextBlock Text="O" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton x:Name="rbAnswerFalse" Tag="2" Grid.Column="1" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="290" Height="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Answer_Click" Visibility="Collapsed">
+                <RadioButton.Content>
+                    <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </RadioButton.Content>
+            </RadioButton>
+
+        </Grid>
+
+        <!-- Exam Category -->
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>   
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <RadioButton Grid.Row="0" Grid.Column="0" Content="交通法令" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="RegulationTest_Click" IsChecked="True"/>
+            <RadioButton Grid.Row="1" Grid.Column="0" Content="臺北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="TaipeiCityTest_Click"/>
+            <RadioButton Grid.Row="1" Grid.Column="1" Content="新北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="NewTaipeiCityTest_Click"/>
+            <RadioButton Grid.Row="1" Grid.Column="2" Content="基隆市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="KeelungCityTest_Click"/>
+            <RadioButton Grid.Row="1" Grid.Column="3" Content="桃園市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="TaoyuanCityTest_Click"/>
+            <RadioButton Grid.Row="1" Grid.Column="4" Content="宜蘭縣" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="YilanCountyTest_Click"/>
+
+        </Grid>
+     
+        <!-- Exam Numbers -->
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnExam1" Grid.Column="1" Content="1" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam2" Grid.Column="2" Content="2" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam3" Grid.Column="3" Content="3" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam4" Grid.Column="4" Content="4" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam5" Grid.Column="5" Content="5" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam6" Grid.Column="6" Content="6" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam7" Grid.Column="7" Content="7" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam8" Grid.Column="8" Content="8" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam9" Grid.Column="9" Content="9" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam10" Grid.Column="10" Content="10" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+
+            <Button x:Name="btnExam11" Grid.Column="11" Content="11" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam12" Grid.Column="12" Content="12" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam13" Grid.Column="13" Content="13" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam14" Grid.Column="14" Content="14" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam15" Grid.Column="15" Content="15" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam16" Grid.Column="16" Content="16" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam17" Grid.Column="17" Content="17" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam18" Grid.Column="18" Content="18" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam19" Grid.Column="19" Content="19" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+            <Button x:Name="btnExam20" Grid.Column="20" Content="20" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="48" Height="48" Click="ExamNumber_Click"/>
+
+        </Grid>
+
+        <!-- Check -->
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="txtChk1" Grid.Column="1" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk2" Grid.Column="2" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk3" Grid.Column="3" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk4" Grid.Column="4" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk5" Grid.Column="5" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk6" Grid.Column="6" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk7" Grid.Column="7" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk8" Grid.Column="8" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk9" Grid.Column="9" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk10" Grid.Column="10" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk11" Grid.Column="11" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk12" Grid.Column="12" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk13" Grid.Column="13" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk14" Grid.Column="14" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk15" Grid.Column="15" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk16" Grid.Column="16" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk17" Grid.Column="17" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk18" Grid.Column="18" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk19" Grid.Column="19" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk20" Grid.Column="20" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+
+        </Grid>
+        <Button Grid.Row="6" Grid.Column="1" Content="Finish" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,12,0" Width="48" Height="48" Click="FinshExam_Click"/>
+        <TextBlock x:Name="txtQuestionNumber" Grid.Row="6" Grid.Column="1" Text="" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+  
+    </Grid>
+</Window>
