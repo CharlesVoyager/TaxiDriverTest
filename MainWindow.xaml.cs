@@ -33,6 +33,8 @@ namespace TaxiDriverTest
             Question = question;
             UserAnswer = userAnswer;
         }
+
+        public bool IsUserAnswerCorrect() { return UserAnswer == Question.Answer; }
     }
 
     class QuestionBank
@@ -347,11 +349,17 @@ namespace TaxiDriverTest
                     if (ExamQuestions[i].UserAnswer == -1)
                         tb.Text = "";
                     else
-                    { 
-                        if (ExamQuestions[i].UserAnswer == ExamQuestions[i].Question.Answer)
+                    {
+                        if (ExamQuestions[i].IsUserAnswerCorrect())
+                        {
                             tb.Text = "V";
+                            tb.Foreground = System.Windows.Media.Brushes.Blue;
+                        }
                         else
-                            tb.Text = "X"; 
+                        {
+                            tb.Text = "X";
+                            tb.Foreground = System.Windows.Media.Brushes.Red;
+                        }
                     }
                 }
             }
