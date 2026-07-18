@@ -35,8 +35,8 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="txtQuestionText" Grid.Row="0" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
-            <TextBlock x:Name="txtQuestionOption1" Grid.Row="2" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="txtQuestionText" Grid.Row="0" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
+            <TextBlock x:Name="txtQuestionOption1" Grid.Row="2" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
             <TextBlock x:Name="txtQuestionOption2" Grid.Row="3" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock x:Name="txtQuestionOption3" Grid.Row="4" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock x:Name="txtQuestionTextTail" Grid.Row="6" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>

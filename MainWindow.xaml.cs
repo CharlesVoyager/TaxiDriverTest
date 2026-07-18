@@ -217,7 +217,11 @@ namespace TaxiDriverTest
 
             foreach (Question question in randomChoiceQuestions)
                 ExamQuestions.Add(new ExamQuestion(question, -1));
- 
+
+#if false   // Test Code
+            ExamQuestions[0].Question = RegulationQuestionBank.TrueFalseQuestions[0];
+#endif
+
             // Show the first question
             curExamQuestionNumber = 1;
             ShowExamQuestion(curExamQuestionNumber);
