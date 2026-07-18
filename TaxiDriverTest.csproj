@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Taxi_Icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Taxi_Icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="QuestionBank\交通法令_是非題.md">
