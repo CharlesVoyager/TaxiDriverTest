@@ -41,7 +41,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="txtExamNumber" Grid.Column="0" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
-                <TextBlock x:Name="txtQuestionText" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
+                <TextBox x:Name="txtQuestionText" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"
+                            IsReadOnly="True"
+                            BorderThickness="0"/>
             </Grid>
 
             <TextBlock x:Name="txtQuestionOption1" Grid.Row="2" Text="" FontSize="28" Margin="24,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
