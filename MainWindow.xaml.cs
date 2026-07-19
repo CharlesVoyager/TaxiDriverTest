@@ -33,7 +33,6 @@ namespace TaxiDriverTest
             Question = question;
             UserAnswer = userAnswer;
         }
-
         public bool IsUserAnswerCorrect() { return UserAnswer == Question.Answer; }
     }
 
@@ -301,6 +300,11 @@ namespace TaxiDriverTest
                 rbAnswerTrue.Visibility = Visibility.Collapsed;
                 rbAnswerFalse.Visibility = Visibility.Collapsed;
             }
+            rbAnswer1.IsChecked = false;
+            rbAnswer2.IsChecked = false;
+            rbAnswer3.IsChecked = false;
+            rbAnswerTrue.IsChecked = false;
+            rbAnswerFalse.IsChecked = false;
         }
 
         private void Answer_Click(object sender, RoutedEventArgs e)

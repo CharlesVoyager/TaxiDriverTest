@@ -12,8 +12,9 @@
             <RowDefinition Height="280"/>
             <RowDefinition Height="80"/>
             <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -114,7 +115,7 @@
         </Grid>
      
         <!-- Exam Numbers -->
-        <Grid Grid.Row="4" Grid.Column="1">
+        <Grid Grid.Row="5" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="*"/>
@@ -165,7 +166,7 @@
         </Grid>
 
         <!-- Check -->
-        <Grid Grid.Row="5" Grid.Column="1">
+        <Grid Grid.Row="6" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="*"/>
@@ -191,30 +192,30 @@
                 <ColumnDefinition Width="2"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="txtChk1" Grid.Column="1" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk2" Grid.Column="2" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk3" Grid.Column="3" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk4" Grid.Column="4" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk5" Grid.Column="5" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk6" Grid.Column="6" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk7" Grid.Column="7" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk8" Grid.Column="8" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk9" Grid.Column="9" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk10" Grid.Column="10" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk11" Grid.Column="11" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk12" Grid.Column="12" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk13" Grid.Column="13" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk14" Grid.Column="14" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk15" Grid.Column="15" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk16" Grid.Column="16" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk17" Grid.Column="17" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk18" Grid.Column="18" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk19" Grid.Column="19" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
-            <TextBlock x:Name="txtChk20" Grid.Column="20" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48"/>
+            <TextBlock x:Name="txtChk1" Grid.Column="1" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk2" Grid.Column="2" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk3" Grid.Column="3" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk4" Grid.Column="4" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk5" Grid.Column="5" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk6" Grid.Column="6" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk7" Grid.Column="7" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk8" Grid.Column="8" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk9" Grid.Column="9" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk10" Grid.Column="10" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk11" Grid.Column="11" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk12" Grid.Column="12" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk13" Grid.Column="13" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk14" Grid.Column="14" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk15" Grid.Column="15" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk16" Grid.Column="16" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk17" Grid.Column="17" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk18" Grid.Column="18" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk19" Grid.Column="19" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
+            <TextBlock x:Name="txtChk20" Grid.Column="20" Text="" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48"/>
 
         </Grid>
-        <Button Grid.Row="6" Grid.Column="1" Content="交卷" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,12,0" Width="68" Height="42" Click="FinshExam_Click"/>
-        <TextBlock x:Name="txtQuestionNumber" Grid.Row="6" Grid.Column="1" Text="" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Grid.Row="7" Grid.Column="1" Content="交卷" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,12,0" Width="68" Height="42" Click="FinshExam_Click"/>
+        <TextBlock x:Name="txtQuestionNumber" Grid.Row="7" Grid.Column="1" Text="" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
   
     </Grid>
 </Window>
