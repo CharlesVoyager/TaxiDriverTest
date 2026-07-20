@@ -199,8 +199,7 @@ header.top .sub {
 .ans-btn:hover { border-color: var(--taxi-yellow); }
 .ans-btn:active { transform: scale(0.97); }
 
-input[type="radio"].ans-input { display: none; }
-input[type="radio"].ans-input:checked + .ans-btn {
+.ans-btn.selected {
   background: var(--go-green);
   border-color: var(--go-green);
   color: white;

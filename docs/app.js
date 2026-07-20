@@ -259,10 +259,10 @@ function showExamQuestion(num) {
   el.answerChoice.classList.toggle('hidden', tf);
   el.answerTF.classList.toggle('hidden', !tf);
 
-  Object.values(el.rb).forEach((r) => (r.checked = false));
-  Object.values(el.rbTF).forEach((r) => (r.checked = false));
-  if (tf && cur.userAnswer >= 1) el.rbTF[cur.userAnswer].checked = true;
-  if (!tf && cur.userAnswer >= 1) el.rb[cur.userAnswer].checked = true;
+  Object.values(el.rb).forEach((r) => r.classList.remove('selected'));
+  Object.values(el.rbTF).forEach((r) => r.classList.remove('selected'));
+  if (tf && cur.userAnswer >= 1) el.rbTF[cur.userAnswer].classList.add('selected');
+  if (!tf && cur.userAnswer >= 1) el.rb[cur.userAnswer].classList.add('selected');
 }
 
 function answerClick(value) {
