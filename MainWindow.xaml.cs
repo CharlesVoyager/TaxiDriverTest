@@ -246,43 +246,30 @@ namespace TaxiDriverTest
 
         void ShowExamQuestion(int examQuestionNumber)
         {
-            Question curQuestion = ExamQuestions[examQuestionNumber - 1].Question;
+            ExamQuestion curExamQuestion = ExamQuestions[examQuestionNumber - 1];
 
             txtExamNumber.Text = examQuestionNumber.ToString() + ".";
-            txtQuestionText.Text = curQuestion.Text;
-            txtQuestionOption1.Text = curQuestion.Options[0];
-            txtQuestionOption2.Text = curQuestion.Options[1];
-            txtQuestionOption3.Text = curQuestion.Options[2];
+            txtQuestionText.Text = curExamQuestion.Question.Text;
+            txtQuestionOption1.Text = curExamQuestion.Question.Options[0];
+            txtQuestionOption2.Text = curExamQuestion.Question.Options[1];
+            txtQuestionOption3.Text = curExamQuestion.Question.Options[2];
 
-            if (ExamQuestions[examQuestionNumber - 1].UserAnswer == 1)
-            {
+            txtQuestionOption1.Background = System.Windows.Media.Brushes.White;
+            txtQuestionOption2.Background = System.Windows.Media.Brushes.White;
+            txtQuestionOption3.Background = System.Windows.Media.Brushes.White;
+
+            if (curExamQuestion.UserAnswer == 1)
                 txtQuestionOption1.Background = System.Windows.Media.Brushes.LightGreen;
-                txtQuestionOption2.Background = System.Windows.Media.Brushes.White;
-                txtQuestionOption3.Background = System.Windows.Media.Brushes.White;
-            }
-            else if (ExamQuestions[examQuestionNumber - 1].UserAnswer == 2)
-            {
-                txtQuestionOption1.Background = System.Windows.Media.Brushes.White;
+            else if (curExamQuestion.UserAnswer == 2)
                 txtQuestionOption2.Background = System.Windows.Media.Brushes.LightGreen;
-                txtQuestionOption3.Background = System.Windows.Media.Brushes.White;
-            }
-            else if (ExamQuestions[examQuestionNumber - 1].UserAnswer == 3)
-            {
-                txtQuestionOption1.Background = System.Windows.Media.Brushes.White;
-                txtQuestionOption2.Background = System.Windows.Media.Brushes.White;
+            else if (curExamQuestion.UserAnswer == 3)
                 txtQuestionOption3.Background = System.Windows.Media.Brushes.LightGreen;
-            }
-            else
-            {
-                txtQuestionOption1.Background = System.Windows.Media.Brushes.White;
-                txtQuestionOption2.Background = System.Windows.Media.Brushes.White;
-                txtQuestionOption3.Background = System.Windows.Media.Brushes.White;
-            }
 
-            txtQuestionNumber.Text = curQuestion.Number.ToString();
-            txtQuestionTextTail.Text = curQuestion.TextTail;
+            txtQuestionNumber.Text = curExamQuestion.Question.Number.ToString();
+            txtQuestionTextTail.Text = curExamQuestion.Question.TextTail;
 
-            if (curQuestion.Options[0] == "是" && curQuestion.Options[1] == "否" && curQuestion.Options[2] == "")
+            if (curExamQuestion.Question.Options[0] == "是" && curExamQuestion.Question.Options[1] == "否" && 
+                curExamQuestion.Question.Options[2] == "")
             {   // This is a True/False question
                 rbAnswer1.Visibility = Visibility.Collapsed;
                 rbAnswer2.Visibility = Visibility.Collapsed;
@@ -348,7 +335,6 @@ namespace TaxiDriverTest
             for (int i = 0; i < ExamQuestions.Count; i++)
             {
                 TextBlock? tb = this.FindName($"txtChk{i + 1}") as TextBlock;
-
                 if (tb != null)
                 {
                     if (ExamQuestions[i].UserAnswer == -1)
