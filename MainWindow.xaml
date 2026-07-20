@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaxiDriverTest"
         mc:Ignorable="d"
-        Title="計程車執業登記證模擬考(電腦單機版) by Charles Chang, 2026." Height="720" Width="1024" ResizeMode="NoResize">
+        Title="計程車執業登記證模擬考(電腦單機版) by Charles Chang, 2026." Height="700" Width="1024" ResizeMode="NoResize">
 
     <Window.Resources>
         <Style x:Key="TaxiRadioButtonStyle" TargetType="RadioButton">
@@ -43,10 +43,9 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="280"/>
             <RowDefinition Height="80"/>    <!-- Answer Grid -->
+            <RowDefinition Height="20"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -146,7 +145,7 @@
         </Grid>
     
         <!-- Exam Numbers -->
-        <Grid Grid.Row="5" Grid.Column="1">
+        <Grid Grid.Row="6" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="*"/>
@@ -196,8 +195,11 @@
 
         </Grid>
 
-        <Button Grid.Row="6" Grid.Column="1" Content="交卷" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,12,0" Width="68" Height="42" Click="FinshExam_Click"/>
-        <TextBlock x:Name="txtQuestionNumber" Grid.Row="6" Grid.Column="1" Text="" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-  
+        <!-- 交卷按钮 -->
+        <Grid Grid.Row="7" Grid.Column="1">
+            <TextBlock x:Name="txtTestResult" Text="已作答 0 / 20 題，答對 0 題" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
+            <Button Grid.Column="1" Content="交卷" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,12,0" Width="68" Height="42" Click="FinshExam_Click"/>
+            <TextBlock x:Name="txtQuestionNumber" Text="" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        </Grid>
     </Grid>
 </Window>

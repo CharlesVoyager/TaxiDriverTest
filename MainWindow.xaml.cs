@@ -238,6 +238,9 @@ namespace TaxiDriverTest
                     btnExam.BorderThickness = new Thickness(1);
                 }
             }
+
+            // Clear the result text
+            txtTestResult.Text = "";
         }
 
 
@@ -329,6 +332,9 @@ namespace TaxiDriverTest
 
         private void FinshExam_Click(object sender, RoutedEventArgs e)
         {
+            int numAnswered = 0;
+            int numCorrect = 0;
+
             for (int i = 0; i < ExamQuestions.Count; i++)
             {
                 Button? btnExam = this.FindName($"btnExam{i + 1}") as Button;
@@ -345,7 +351,15 @@ namespace TaxiDriverTest
                         btnExam.BorderThickness = new Thickness(2);
                     }
                 }
+
+                if (ExamQuestions[i].UserAnswer != -1)
+                    numAnswered++;
+                if (ExamQuestions[i].IsUserAnswerCorrect())
+                    numCorrect++;
             }
+
+            // 已作答 0 / 20 題，答對 0 題
+            txtTestResult.Text = $"已作答 {numAnswered} / {ExamQuestions.Count} 題，答對 {numCorrect} 題";
         }
 
         private void RegulationTest_Click(object sender, RoutedEventArgs e)
