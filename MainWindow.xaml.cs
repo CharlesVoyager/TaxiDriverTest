@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Xml.Linq;
+using System.Windows.Media;
 
 namespace TaxiDriverTest
 {
@@ -171,13 +171,13 @@ namespace TaxiDriverTest
             }
         }
     }
-
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {       
+    {    
+        private static readonly Brush DefaultBorderBrush = new SolidColorBrush(Color.FromArgb(0xFF, 0x70, 0x70, 0x70));
+
         QuestionBank? RegulationQuestionBank = null;
         QuestionBank? KeelungCityQuestionBank = null;
         QuestionBank? YilangCountryQuestionBank = null;
@@ -227,19 +227,16 @@ namespace TaxiDriverTest
             curExamQuestionNumber = 1;
             ShowExamQuestion(curExamQuestionNumber);
 
-            // Clear the check marks for all questions
-            for (int i = 0; i < totalExamQuestionCount; i++)
-            {
-                TextBlock? tb = this.FindName($"txtChk{i + 1}") as TextBlock;
-                if (tb != null) tb.Text = "";
-            }
-
-            // Clear exam number button backgrounds
+            // Clear exam number button backgrounds and border colors
             for (int i = 0; i < totalExamQuestionCount; i++)
             {
                 Button? btnExam = this.FindName($"btnExam{i + 1}") as Button;
                 if (btnExam != null)
+                {
                     btnExam.Background = System.Windows.Media.Brushes.White;
+                    btnExam.BorderBrush = DefaultBorderBrush;
+                    btnExam.BorderThickness = new Thickness(1);
+                }
             }
         }
 
@@ -334,23 +331,18 @@ namespace TaxiDriverTest
         {
             for (int i = 0; i < ExamQuestions.Count; i++)
             {
-                TextBlock? tb = this.FindName($"txtChk{i + 1}") as TextBlock;
-                if (tb != null)
+                Button? btnExam = this.FindName($"btnExam{i + 1}") as Button;
+                if (btnExam != null)
                 {
-                    if (ExamQuestions[i].UserAnswer == -1)
-                        tb.Text = "";
+                    if (ExamQuestions[i].IsUserAnswerCorrect() || ExamQuestions[i].UserAnswer == -1)
+                    {
+                        btnExam.BorderBrush = DefaultBorderBrush;
+                        btnExam.BorderThickness = new Thickness(1);
+                    }
                     else
                     {
-                        if (ExamQuestions[i].IsUserAnswerCorrect())
-                        {
-                            tb.Text = "V";
-                            tb.Foreground = System.Windows.Media.Brushes.Blue;
-                        }
-                        else
-                        {
-                            tb.Text = "X";
-                            tb.Foreground = System.Windows.Media.Brushes.Red;
-                        }
+                        btnExam.BorderBrush = System.Windows.Media.Brushes.Red;
+                        btnExam.BorderThickness = new Thickness(2);
                     }
                 }
             }
