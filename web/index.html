@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>計程車執業登記證模擬考(網頁版)</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <span class="badge">TAXI EXAM</span>
+    <h1>計程車執業登記證模擬考</h1>
+    <span class="sub">網頁版 · by Charles Chang, 2026</span>
+  </header>
+
+  <div id="categoryBar"></div>
+
+  <div class="question-card">
+    <div class="q-head">
+      <div id="txtExamNumber">1.</div>
+      <textarea id="txtQuestionText" readonly rows="2"></textarea>
+    </div>
+
+    <div class="options">
+      <div id="txtQuestionOption1" class="opt"></div>
+      <div id="txtQuestionOption2" class="opt"></div>
+      <div id="txtQuestionOption3" class="opt"></div>
+    </div>
+
+    <div id="txtQuestionTextTail"></div>
+
+    <div id="answerChoice" class="answer-row">
+      <span>
+        <input class="ans-input" type="radio" name="ansChoice" id="rbAnswer1CB" />
+        <label class="ans-btn" id="rbAnswer1" for="rbAnswer1CB">1</label>
+      </span>
+      <span>
+        <input class="ans-input" type="radio" name="ansChoice" id="rbAnswer2CB" />
+        <label class="ans-btn" id="rbAnswer2" for="rbAnswer2CB">2</label>
+      </span>
+      <span>
+        <input class="ans-input" type="radio" name="ansChoice" id="rbAnswer3CB" />
+        <label class="ans-btn" id="rbAnswer3" for="rbAnswer3CB">3</label>
+      </span>
+    </div>
+
+    <div id="answerTF" class="answer-row hidden">
+      <span>
+        <input class="ans-input" type="radio" name="ansTF" id="rbAnswerTrueCB" />
+        <label class="ans-btn" id="rbAnswerTrue" for="rbAnswerTrueCB">O</label>
+      </span>
+      <span>
+        <input class="ans-input" type="radio" name="ansTF" id="rbAnswerFalseCB" />
+        <label class="ans-btn" id="rbAnswerFalse" for="rbAnswerFalseCB">X</label>
+      </span>
+    </div>
+  </div>
+
+  <div class="section-label">題號</div>
+  <div id="examNumbers"></div>
+
+  <div class="section-label">結果</div>
+  <div id="checks"></div>
+
+  <footer class="controls">
+    <button id="btnFinish" type="button">交卷</button>
+    <div id="scoreSummary"></div>
+    <div id="txtQuestionNumber" style="margin-left:auto;color:var(--lane-dim);font-size:13px;"></div>
+  </footer>
+
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
