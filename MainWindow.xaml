@@ -6,6 +6,36 @@
         xmlns:local="clr-namespace:TaxiDriverTest"
         mc:Ignorable="d"
         Title="計程車執業登記證模擬考(電腦版) by Charles Chang, 2026." Height="700" Width="1024" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style x:Key="GreenRadioButtonStyle" TargetType="RadioButton">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightGreen"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="DarkGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="12"/>
@@ -105,12 +135,12 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <RadioButton Grid.Row="0" Grid.Column="0" Content="交通法令" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="RegulationTest_Click" IsChecked="True"/>
-            <RadioButton Grid.Row="1" Grid.Column="0" Content="臺北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="TaipeiCityTest_Click"/>
-            <RadioButton Grid.Row="1" Grid.Column="1" Content="新北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="NewTaipeiCityTest_Click"/>
-            <RadioButton Grid.Row="1" Grid.Column="2" Content="基隆市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="KeelungCityTest_Click"/>
-            <RadioButton Grid.Row="1" Grid.Column="3" Content="桃園市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="TaoyuanCityTest_Click"/>
-            <RadioButton Grid.Row="1" Grid.Column="4" Content="宜蘭縣" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource {x:Type ToggleButton}}" Width="160" Height="36" Click="YilanCountyTest_Click"/>
+            <RadioButton Grid.Row="0" Grid.Column="0" Content="交通法令" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource GreenRadioButtonStyle}" Width="160" Height="36" Click="RegulationTest_Click" IsChecked="True"/>
+            <RadioButton Grid.Row="1" Grid.Column="0" Content="臺北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource GreenRadioButtonStyle}" Width="160" Height="36" Click="TaipeiCityTest_Click"/>
+            <RadioButton Grid.Row="1" Grid.Column="1" Content="新北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource GreenRadioButtonStyle}" Width="160" Height="36" Click="NewTaipeiCityTest_Click"/>
+            <RadioButton Grid.Row="1" Grid.Column="2" Content="基隆市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource GreenRadioButtonStyle}" Width="160" Height="36" Click="KeelungCityTest_Click"/>
+            <RadioButton Grid.Row="1" Grid.Column="3" Content="桃園市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource GreenRadioButtonStyle}" Width="160" Height="36" Click="TaoyuanCityTest_Click"/>
+            <RadioButton Grid.Row="1" Grid.Column="4" Content="宜蘭縣" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource GreenRadioButtonStyle}" Width="160" Height="36" Click="YilanCountyTest_Click"/>
 
         </Grid>
      
