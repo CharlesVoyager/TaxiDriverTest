@@ -164,7 +164,6 @@ const el = {
     2: document.getElementById('rbAnswerFalse'),
   },
   examNumbers: document.getElementById('examNumbers'),
-  checks: document.getElementById('checks'),
   finishBtn: document.getElementById('btnFinish'),
   scoreSummary: document.getElementById('scoreSummary'),
 };
@@ -191,7 +190,6 @@ function refreshCategoryBar() {
 
 function buildExamNumberGrid() {
   el.examNumbers.innerHTML = '';
-  el.checks.innerHTML = '';
   for (let i = 1; i <= TOTAL_EXAM_QUESTION_COUNT; i++) {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -200,11 +198,6 @@ function buildExamNumberGrid() {
     btn.dataset.num = String(i);
     btn.addEventListener('click', () => goToQuestion(i));
     el.examNumbers.appendChild(btn);
-
-    const chk = document.createElement('div');
-    chk.className = 'chk';
-    chk.dataset.num = String(i);
-    el.checks.appendChild(chk);
   }
 }
 
@@ -224,11 +217,7 @@ function startExam(categoryId) {
   curExamQuestionNumber = 1;
   showExamQuestion(curExamQuestionNumber);
 
-  el.examNumbers.querySelectorAll('.num-btn').forEach((btn) => btn.classList.remove('answered'));
-  el.checks.querySelectorAll('.chk').forEach((c) => {
-    c.textContent = '';
-    c.className = 'chk';
-  });
+  el.examNumbers.querySelectorAll('.num-btn').forEach((btn) => btn.classList.remove('answered', 'wrong'));
   el.scoreSummary.textContent = '';
   el.finishBtn.disabled = false;
 }
@@ -270,11 +259,7 @@ function answerClick(value) {
 
   const btn = el.examNumbers.querySelector(`.num-btn[data-num="${curExamQuestionNumber}"]`);
   if (btn) btn.classList.add('answered');
-  const chk = el.checks.querySelector(`.chk[data-num="${curExamQuestionNumber}"]`);
-  if (chk) {
-    chk.textContent = '';
-    chk.className = 'chk';
-  }
+  if (btn) btn.classList.remove('wrong');
 
   if (curExamQuestionNumber >= examQuestions.length) return;
 
@@ -291,23 +276,15 @@ function finishExam() {
   let correct = 0;
   let answered = 0;
   for (let i = 0; i < examQuestions.length; i++) {
-    const chk = el.checks.querySelector(`.chk[data-num="${i + 1}"]`);
-    if (!chk) continue;
+    const btn = el.examNumbers.querySelector(`.num-btn[data-num="${i + 1}"]`);
     const cur = examQuestions[i];
-    if (cur.userAnswer === -1) {
-      chk.textContent = '';
-      chk.className = 'chk';
-      continue;
-    }
-    answered++;
-    if (cur.userAnswer === cur.question.answer) {
-      chk.textContent = 'V';
-      chk.className = 'chk correct';
-      correct++;
-    } else {
-      chk.textContent = 'X';
-      chk.className = 'chk wrong';
-    }
+
+    if (cur.userAnswer !== -1) answered++;
+    if (cur.userAnswer === cur.question.answer) correct++;
+
+    if (!btn) continue;
+    const isWrong = cur.userAnswer !== -1 && cur.userAnswer !== cur.question.answer;
+    btn.classList.toggle('wrong', isWrong);
   }
   el.scoreSummary.textContent = `已作答 ${answered} / ${examQuestions.length} 題，答對 ${correct} 題`;
 }

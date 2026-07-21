@@ -236,25 +236,7 @@ header.top .sub {
 
 .num-btn:hover { border-color: var(--taxi-yellow); }
 .num-btn.answered { background: var(--go-green); border-color: var(--go-green); color: white; }
-
-#checks {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 6px;
-  margin-bottom: 22px;
-}
-
-.chk {
-  height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 17px;
-}
-
-.chk.correct { color: #6FE39A; }
-.chk.wrong { color: var(--stop-red); }
+.num-btn.wrong { border-color: var(--stop-red); border-width: 2px; }
 
 /* Footer controls */
 footer.controls {
@@ -287,7 +269,7 @@ footer.controls {
 }
 
 @media (max-width: 640px) {
-  #examNumbers, #checks { grid-template-columns: repeat(5, 1fr); }
+  #examNumbers { grid-template-columns: repeat(5, 1fr); }
   .ans-btn { font-size: 32px; height: 68px; }
   #answerChoice, #answerTF { gap: 10px; }
   #txtQuestionText { font-size: 18px; }
