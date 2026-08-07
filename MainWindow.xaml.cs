@@ -49,6 +49,12 @@ namespace TaxiDriverTest
             ReadTrueFalseQuestions(sourceFileTrueFalseQuestions);
         }
 
+        public void AddQuestions(QuestionBank questionBank)
+        {
+            ChoiceQuestions.AddRange(questionBank.ChoiceQuestions);
+            TrueFalseQuestions.AddRange(questionBank.TrueFalseQuestions);
+        }
+
         public List<Question> GetRandomChoiceQuestions(int count)
         {
             var random = new Random();
@@ -206,17 +212,11 @@ namespace TaxiDriverTest
             TaipeiCityQuestionBank = new QuestionBank(@".\QuestionBank\臺北市_地理環境_選擇題.md", @".\QuestionBank\臺北市_地理環境_是非題.md");
 
             GeographocalQuestionBank = new QuestionBank();
-            GeographocalQuestionBank.TrueFalseQuestions.AddRange(KeelungCityQuestionBank.TrueFalseQuestions);
-            GeographocalQuestionBank.TrueFalseQuestions.AddRange(YilangCountryQuestionBank.TrueFalseQuestions);
-            GeographocalQuestionBank.TrueFalseQuestions.AddRange(NewTaipeiCityQuestionBank.TrueFalseQuestions);
-            GeographocalQuestionBank.TrueFalseQuestions.AddRange(TaoYuanCityQuestionBank.TrueFalseQuestions);
-            GeographocalQuestionBank.TrueFalseQuestions.AddRange(TaipeiCityQuestionBank.TrueFalseQuestions);
-
-            GeographocalQuestionBank.ChoiceQuestions.AddRange(KeelungCityQuestionBank.ChoiceQuestions);
-            GeographocalQuestionBank.ChoiceQuestions.AddRange(YilangCountryQuestionBank.ChoiceQuestions);
-            GeographocalQuestionBank.ChoiceQuestions.AddRange(NewTaipeiCityQuestionBank.ChoiceQuestions);
-            GeographocalQuestionBank.ChoiceQuestions.AddRange(TaoYuanCityQuestionBank.ChoiceQuestions);
-            GeographocalQuestionBank.ChoiceQuestions.AddRange(TaipeiCityQuestionBank.ChoiceQuestions);
+            GeographocalQuestionBank.AddQuestions(KeelungCityQuestionBank);
+            GeographocalQuestionBank.AddQuestions(YilangCountryQuestionBank);
+            GeographocalQuestionBank.AddQuestions(NewTaipeiCityQuestionBank);
+            GeographocalQuestionBank.AddQuestions(TaoYuanCityQuestionBank);
+            GeographocalQuestionBank.AddQuestions(TaipeiCityQuestionBank);
 
             StartExam(RegulationQuestionBank);
         }
