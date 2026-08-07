@@ -67,14 +67,16 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <RadioButton Grid.Column="0" Content="交通法令" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="160" Height="36" Click="RegulationTest_Click" IsChecked="True"/>
-            <RadioButton Grid.Column="1" Content="臺北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="160" Height="36" Click="TaipeiCityTest_Click"/>
-            <RadioButton Grid.Column="2" Content="新北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="160" Height="36" Click="NewTaipeiCityTest_Click"/>
-            <RadioButton Grid.Column="3" Content="基隆市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="160" Height="36" Click="KeelungCityTest_Click"/>
-            <RadioButton Grid.Column="4" Content="桃園市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="160" Height="36" Click="TaoyuanCityTest_Click"/>
-            <RadioButton Grid.Column="5" Content="宜蘭縣" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="160" Height="36" Click="YilanCountyTest_Click"/>
+            <RadioButton Grid.Column="0" Content="交通法令" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="134" Height="36" Click="RegulationTest_Click" IsChecked="True"/>
+            <RadioButton Grid.Column="1" Content="地理環境" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="134" Height="36" Click="GeographocalTest_Click"/>
+            <RadioButton Grid.Column="2" Content="臺北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="134" Height="36" Click="TaipeiCityTest_Click"/>
+            <RadioButton Grid.Column="3" Content="新北市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="134" Height="36" Click="NewTaipeiCityTest_Click"/>
+            <RadioButton Grid.Column="4" Content="基隆市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="134" Height="36" Click="KeelungCityTest_Click"/>
+            <RadioButton Grid.Column="5" Content="桃園市" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="134" Height="36" Click="TaoyuanCityTest_Click"/>
+            <RadioButton Grid.Column="6" Content="宜蘭縣" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TaxiRadioButtonStyle}" Width="134" Height="36" Click="YilanCountyTest_Click"/>
 
         </Grid>
         

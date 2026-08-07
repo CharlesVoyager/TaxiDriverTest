@@ -41,6 +41,8 @@ namespace TaxiDriverTest
         public List<Question> ChoiceQuestions = new List<Question>();
         public List<Question> TrueFalseQuestions = new List<Question>();
 
+        public QuestionBank() { }
+
         public QuestionBank(string sourceFileChoiceQuestions, string sourceFileTrueFalseQuestions)
         {
             ReadChoiceQuestions(sourceFileChoiceQuestions);
@@ -179,6 +181,8 @@ namespace TaxiDriverTest
         private static readonly Brush DefaultBorderBrush = new SolidColorBrush(Color.FromArgb(0xFF, 0x70, 0x70, 0x70));
 
         QuestionBank? RegulationQuestionBank = null;
+        QuestionBank? GeographocalQuestionBank = null;
+
         QuestionBank? KeelungCityQuestionBank = null;
         QuestionBank? YilangCountryQuestionBank = null;
         QuestionBank? NewTaipeiCityQuestionBank = null;
@@ -200,6 +204,19 @@ namespace TaxiDriverTest
             NewTaipeiCityQuestionBank = new QuestionBank(@".\QuestionBank\新北市_地理環境_選擇題.md", @".\QuestionBank\新北市_地理環境_是非題.md");
             TaoYuanCityQuestionBank = new QuestionBank(@".\QuestionBank\桃園市_地理環境_選擇題.md", @".\QuestionBank\桃園市_地理環境_是非題.md");
             TaipeiCityQuestionBank = new QuestionBank(@".\QuestionBank\臺北市_地理環境_選擇題.md", @".\QuestionBank\臺北市_地理環境_是非題.md");
+
+            GeographocalQuestionBank = new QuestionBank();
+            GeographocalQuestionBank.TrueFalseQuestions.AddRange(KeelungCityQuestionBank.TrueFalseQuestions);
+            GeographocalQuestionBank.TrueFalseQuestions.AddRange(YilangCountryQuestionBank.TrueFalseQuestions);
+            GeographocalQuestionBank.TrueFalseQuestions.AddRange(NewTaipeiCityQuestionBank.TrueFalseQuestions);
+            GeographocalQuestionBank.TrueFalseQuestions.AddRange(TaoYuanCityQuestionBank.TrueFalseQuestions);
+            GeographocalQuestionBank.TrueFalseQuestions.AddRange(TaipeiCityQuestionBank.TrueFalseQuestions);
+
+            GeographocalQuestionBank.ChoiceQuestions.AddRange(KeelungCityQuestionBank.ChoiceQuestions);
+            GeographocalQuestionBank.ChoiceQuestions.AddRange(YilangCountryQuestionBank.ChoiceQuestions);
+            GeographocalQuestionBank.ChoiceQuestions.AddRange(NewTaipeiCityQuestionBank.ChoiceQuestions);
+            GeographocalQuestionBank.ChoiceQuestions.AddRange(TaoYuanCityQuestionBank.ChoiceQuestions);
+            GeographocalQuestionBank.ChoiceQuestions.AddRange(TaipeiCityQuestionBank.ChoiceQuestions);
 
             StartExam(RegulationQuestionBank);
         }
@@ -396,6 +413,12 @@ namespace TaxiDriverTest
         {
             if (YilangCountryQuestionBank != null)
                 StartExam(YilangCountryQuestionBank);
+        }
+
+        private void GeographocalTest_Click(object sender, RoutedEventArgs e)
+        {
+            if (GeographocalQuestionBank != null)
+                StartExam(GeographocalQuestionBank);
         }
     }
 }
