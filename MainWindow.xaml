@@ -85,9 +85,9 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="12"/>
-                <RowDefinition Height="42"/>
-                <RowDefinition Height="42"/>
-                <RowDefinition Height="42"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="12"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -102,9 +102,9 @@
                         IsReadOnly="True"
                         BorderThickness="0"/>
 
-            <TextBlock x:Name="txtQuestionOption1" Grid.Row="2" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
-            <TextBlock x:Name="txtQuestionOption2" Grid.Row="3" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
-            <TextBlock x:Name="txtQuestionOption3" Grid.Row="4" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Microsoft JhengHei"/>
+            <TextBlock x:Name="txtQuestionOption1" Grid.Row="2" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
+            <TextBlock x:Name="txtQuestionOption2" Grid.Row="3" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
+            <TextBlock x:Name="txtQuestionOption3" Grid.Row="4" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
             <TextBlock x:Name="txtQuestionTextTail" Grid.Row="6" Grid.Column="1" Text="" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Microsoft JhengHei"/>
 
         </Grid>

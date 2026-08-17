@@ -237,7 +237,7 @@ namespace TaxiDriverTest
                 ExamQuestions.Add(new ExamQuestion(question, -1));
 
 #if false   // Test Code
-            ExamQuestions[0].Question = RegulationQuestionBank.TrueFalseQuestions[0];
+            ExamQuestions[0].Question = RegulationQuestionBank.ChoiceQuestions[171];
 #endif
 
             // Show the first question
